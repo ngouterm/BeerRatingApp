@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddBeerFragment">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/add_beer_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/add_beer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/beer_name_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:ems="10"
+            android:hint="@string/beer_name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/beer_brew_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:ems="10"
+            android:hint="@string/beer_brew"
+            android:inputType="textAutoCorrect"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/beer_name_txt" />
+
+        <TextView
+            android:id="@+id/beer_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="top"
+            app:layout_constraintBottom_toTopOf="@+id/add_beer_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feelRating" />
+
+        <RatingBar
+            android:id="@+id/tasteRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="8dp"
+            android:numStars="5"
+            app:layout_constraintBottom_toTopOf="@+id/lookRating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/beer_brew_txt"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+
+        <RatingBar
+            android:id="@+id/lookRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="8dp"
+            android:numStars="5"
+            app:layout_constraintBottom_toTopOf="@+id/smellRating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/lookView"
+            app:layout_constraintTop_toBottomOf="@+id/tasteRating" />
+
+        <RatingBar
+            android:id="@+id/smellRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="8dp"
+            android:numStars="5"
+            app:layout_constraintBottom_toTopOf="@+id/feelRating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/smellFeel"
+            app:layout_constraintTop_toBottomOf="@+id/lookRating" />
+
+        <RatingBar
+            android:id="@+id/feelRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="8dp"
+            android:numStars="5"
+            app:layout_constraintBottom_toTopOf="@+id/beer_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/feelView"
+            app:layout_constraintTop_toBottomOf="@+id/smellRating" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="Taste"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tasteRating"
+            app:layout_constraintEnd_toStartOf="@+id/tasteRating"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tasteRating" />
+
+        <TextView
+            android:id="@+id/lookView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="Look"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/lookRating"
+            app:layout_constraintEnd_toStartOf="@+id/lookRating"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lookRating" />
+
+        <TextView
+            android:id="@+id/smellFeel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="Smell"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/smellRating"
+            app:layout_constraintEnd_toStartOf="@+id/smellRating"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/smellRating" />
+
+        <TextView
+            android:id="@+id/feelView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="Feel"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/feelRating"
+            app:layout_constraintEnd_toStartOf="@+id/feelRating"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/feelRating" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>
